@@ -3,8 +3,11 @@ import ColorCard from './ColorCard'
 
 class ColorApp extends React.Component {
   render() {
+    const colors = this.props.colors;
     return (
-      <div>{this.props.colors.map(c => <ColorCard color={c} />)}</div>
+      <div>
+        {colors.map(c => <ColorCard key={c} color={c}/>)}
+      </div>
     )
   }
 }

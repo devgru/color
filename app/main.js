@@ -4,9 +4,13 @@ import ColorApp from './components/ColorApp'
 
 var mountNode = document.getElementById('react-main-mount');
 
-//render(new ColorCard({color: '#' + location.pathname.slice(1)}), mountNode);
 function renderApp() {
-  render(<ColorApp colors={ location.hash.split('/')}/>, mountNode);
+  var hash = location.hash;
+  var upper = hash.toUpperCase();
+  if(hash == upper)
+    render(<ColorApp colors={ hash.split('/')}/>, mountNode);
+  else
+    location.hash = upper;
 }
 
 renderApp();

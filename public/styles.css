@@ -1,3 +1,41 @@
 body {
   margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.color-card {
+  float: left;
+
+  width: 250px;
+  height: 250px;
+
+  margin-top: 20px;
+  margin-left: 20px;
+
+  background-color: #FFFFFF;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.color-card__text {
+  position: absolute;
+  bottom: 0;
+
+  width: 270px;
+  box-sizing: border-box;
+
+  padding: 10px 20px;
+  left: -10px;
+
+  box-shadow: 0 0 5px;
+}
+
+.color-card__text_light > * {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.color-card__text_dark > * {
+  color: rgba(255, 255, 255, 0.8);
 }
