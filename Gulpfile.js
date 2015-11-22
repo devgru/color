@@ -1,15 +1,17 @@
-var gulp       = require('gulp'),
-    browserify = require('gulp-browserify');
+var gulp = require('gulp');
+var babelify = require('babelify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
 
 gulp.task('scripts', function () {
-
-    gulp.src(['app/main.js'])
-        .pipe(browserify({
-            debug: true,
-            transform: [ 'reactify' ]
-        }))
-        .pipe(gulp.dest('./public/'));
-
+  browserify({
+    debug: true,
+    entries: './app/main.js'
+  })
+    .transform(babelify, {presets: ["react", "es2015"]})
+    .bundle()
+    .pipe(source('app/main.js'))
+    .pipe(gulp.dest('./public/'));
 });
 
 gulp.task('default', ['scripts']);
