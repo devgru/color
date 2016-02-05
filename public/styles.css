@@ -23,19 +23,17 @@ body {
   position: absolute;
   bottom: 0;
 
-  width: 270px;
+  width: 100%;
   box-sizing: border-box;
 
-  padding: 10px 20px;
-  left: -10px;
-
-  box-shadow: 0 0 5px;
+  padding: 10px;
+  line-height: 1.25em;
 }
 
-.color-card__text_light > * {
-  color: rgba(0, 0, 0, 0.8);
+.color-card__text_bright {
+  color: black;
 }
 
-.color-card__text_dark > * {
-  color: rgba(255, 255, 255, 0.8);
+.color-card__text_dark {
+  color: white;
 }

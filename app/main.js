@@ -1,17 +1,22 @@
 import React from 'react';
 import {render} from 'react-dom';
 import ColorApp from './components/ColorApp'
+import {validate} from './components/ColorHash'
+import uniq from 'lodash/array/uniq';
 
 var mountNode = document.getElementById('react-main-mount');
 
 function renderApp() {
   var hash = location.hash;
   var upper = hash.toUpperCase();
-  if(hash == upper)
-    render(<ColorApp colors={ hash.split('/')}/>, mountNode);
+  var colors = uniq(upper.split('/').filter(Boolean));
+  var properUrl = colors.join('/');
+
+  if (validate(hash))
+    render(<ColorApp colors={ colors }/>, mountNode);
   else
-    location.hash = upper;
+    location.hash = properUrl;
 }
 
-renderApp();
 window.addEventListener('hashchange', renderApp, false);
+renderApp();
