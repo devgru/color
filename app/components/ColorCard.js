@@ -13,11 +13,9 @@ const BLUE_HUE = 306.28;
 function lightness(color) {
   const L = color.l;
 
-  return L < 2 ? 'black'
-    : L < 5 ? 'almost black'
+  return L < 5 ? 'very dark'
     : L < 35 ? 'dark'
-    : L > 98 ? 'white'
-    : L > 95 ? 'almost white'
+    : L > 95 ? 'very bright'
     : L > 65 ? 'bright'
     : undefined;
 }
@@ -69,8 +67,9 @@ function ColorCard(props) {
   return (
     <div className="color-card" style={cardStyle}>
       <div className={textClasses}>
-        <div className="color-card__hex">
-          {color} — {colorName}
+        <div>
+          <span className="color-card__hex">{color}</span>
+          <span className="color-card__name"> — {colorName}</span>
         </div>
         <div className="color-card__description">
           {description}

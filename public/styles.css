@@ -3,6 +3,12 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.color-cardboard {
+  padding: 0 0 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
 .color-card {
   float: left;
 
@@ -13,7 +19,7 @@ body {
   margin-left: 20px;
 
   background-color: #FFFFFF;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
   position: relative;
   overflow: hidden;
@@ -28,6 +34,22 @@ body {
 
   padding: 10px;
   line-height: 1.25em;
+}
+
+.color-card__plus {
+  width: 100px;
+  height: 100px;
+
+  position: absolute;
+  left: 75px;
+  top: 75px;
+
+  font-size: 150px;
+  line-height: 64px;
+  font-weight: bold;
+  text-align: center;
+
+  color: black;
 }
 
 .color-card__text_bright {
