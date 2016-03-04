@@ -12,7 +12,7 @@ function renderApp() {
   var colors = uniq(upper.split('/').filter(Boolean));
   var properUrl = colors.join('/');
 
-  if (validate(hash))
+  if (validate(hash) || colors.length == 0)
     render(<ColorApp colors={ colors }/>, mountNode);
   else
     location.hash = properUrl;

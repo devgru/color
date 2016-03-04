@@ -24,7 +24,6 @@ gulp.task('test', runTests);
 gulp.task('default', ['build+test+watch']);
 
 function buildTest() {
-  runTests();
   buildMain();
 }
 

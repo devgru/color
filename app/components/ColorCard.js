@@ -50,11 +50,13 @@ function ColorCard(props) {
   };
 
   const hcl = d3.hcl(color);
+  const rgb = d3.rgb(color);
 
   const colorName = ClosestColor(hcl.toString()).name;
 
-  const prettyColor = objectMap(hcl, cents);
-  if (prettyColor.c == 0) prettyColor.h = 'any';
+  const prettyHcl = objectMap(hcl, cents);
+  const prettyRgb = objectMap(rgb, cents);
+  if (prettyHcl.c == 0) prettyHcl.h = 'any';
 
   const textClasses = classNames({
     'color-card__text': true,
@@ -62,7 +64,7 @@ function ColorCard(props) {
     'color-card__text_dark': hcl.l <= 50
   });
 
-  const description = properties.map(propertyOf(prettyColor)).filter(Boolean).join(', ');
+  const description = properties.map(propertyOf(prettyHcl)).filter(Boolean).join(', ');
 
   return (
     <div className="color-card" style={cardStyle}>
@@ -75,7 +77,10 @@ function ColorCard(props) {
           {description}
         </div>
         <div className="color-card__properties">
-          H: {prettyColor.h}, C: {prettyColor.c}, L: {prettyColor.l}
+          R: {prettyRgb.r}, G: {prettyRgb.g}, B: {prettyRgb.b}
+        </div>
+        <div className="color-card__properties">
+          H: {prettyHcl.h}, C: {prettyHcl.c}, L: {prettyHcl.l}
         </div>
       </div>
     </div>

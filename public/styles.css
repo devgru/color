@@ -33,7 +33,9 @@ body {
   box-sizing: border-box;
 
   padding: 10px;
-  line-height: 1.25em;
+
+  font-size: 16px;
+  line-height: 1.4em;
 }
 
 .color-card__plus {
@@ -58,4 +60,22 @@ body {
 
 .color-card__text_dark {
   color: white;
+}
+
+.color-card__generate {
+  padding: 10px;
+}
+
+.color-card__generate h3 {
+  margin: 0 0 0.75em;
+}
+
+.color-card__generate p {
+  font-size: 11px;
+  margin: 2px;
+  clear: both;
+}
+
+.color-card__generate input {
+  float: right;
 }
