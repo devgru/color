@@ -4,14 +4,14 @@ import GeneratePalette from '../domain/GeneratePalette'
 var PaletteGenerator = React.createClass({
   getInitialState: function () {
     return {
-      startHue: 25,
-      minDelta: 18,
+      startHue: 30,
+      minDelta: 10,
       maxL: 90,
       minL: 25,
-      maxC: 65,
+      maxC: 90,
       minC: 35,
-      lcPrecision: 0.5,
-      hPrecision: 1
+      lcPrecision: 2,
+      hPrecision: 3
     };
   },
 
