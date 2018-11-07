@@ -1,8 +1,6 @@
 import React from 'react';
 import ColorCard from './ColorCard';
 import Delta from './Delta';
-import PaletteGenerator from './PaletteGenerator';
-import GeneratePalette from '../domain/GeneratePalette';
 
 function ColorApp(props) {
   const colors = props.colors;
@@ -22,7 +20,6 @@ function ColorApp(props) {
   });
   return (
     <div>
-      <PaletteGenerator />
       {results}
       <ColorCard key={lastColor} color={lastColor} />
     </div>
