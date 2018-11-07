@@ -52,7 +52,7 @@ function ColorCard(props) {
   const hclColor = hcl(color);
   const rgbColor = rgb(color);
 
-  const colorName = ClosestColor(hclColor.toString()).name;
+  const colorName = ClosestColor(hclColor.hex()).name;
 
   const prettyHcl = objectMap(hclColor, cents);
   const prettyRgb = objectMap(rgbColor, cents);
