@@ -1,5 +1,5 @@
 import React from 'react';
-import d3 from 'd3-color';
+import { hcl } from 'd3-color';
 import deltae from 'deltae';
 import toString from '../domain/ColorToString';
 import classNames from 'classnames';
@@ -9,8 +9,8 @@ const cents = round(0.01);
 
 function Delta(props) {
   var delta = 0;
-  var hcl1 = d3.hcl(props.colors[0]);
-  var hcl2 = d3.hcl(props.colors[1]);
+  var hcl1 = hcl(props.colors[0]);
+  var hcl2 = hcl(props.colors[1]);
 
   deltae.delta(toString(hcl1), toString(hcl2), function (d) {
     delta = cents(d);

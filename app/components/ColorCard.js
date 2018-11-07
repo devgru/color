@@ -1,5 +1,5 @@
 import React from 'react';
-import d3 from 'd3-color';
+import { hcl, rgb } from 'd3-color';
 import round from 'round-to-precision';
 import objectMap from 'object-map';
 import classNames from 'classnames';
@@ -49,19 +49,19 @@ function ColorCard(props) {
     backgroundColor: color
   };
 
-  const hcl = d3.hcl(color);
-  const rgb = d3.rgb(color);
+  const hclColor = hcl(color);
+  const rgbColor = rgb(color);
 
-  const colorName = ClosestColor(hcl.toString()).name;
+  const colorName = ClosestColor(hclColor.toString()).name;
 
-  const prettyHcl = objectMap(hcl, cents);
-  const prettyRgb = objectMap(rgb, cents);
+  const prettyHcl = objectMap(hclColor, cents);
+  const prettyRgb = objectMap(rgbColor, cents);
   if (prettyHcl.c == 0) prettyHcl.h = 'any';
 
   const textClasses = classNames({
     'color-card__text': true,
-    'color-card__text_bright': hcl.l > 50,
-    'color-card__text_dark': hcl.l <= 50
+    'color-card__text_bright': hclColor.l > 50,
+    'color-card__text_dark': hclColor.l <= 50
   });
 
   const description = properties.map(propertyOf(prettyHcl)).filter(Boolean).join(', ');
