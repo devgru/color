@@ -13,6 +13,7 @@
     "chai-enzyme": "^0.4.0",
     "classnames": "^2.2.0",
     "closest-color": "^1.2.1",
+    "color-descriptor": "^0.0.2",
     "cookie-parser": "~1.0.0",
     "d3-color": "1",
     "delta-e": "0.0.7",
