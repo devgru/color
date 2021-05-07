@@ -1,5 +1,6 @@
 {
   "name": "color-react-v2",
+  "homepage": "https://devgru.github.io/color",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
