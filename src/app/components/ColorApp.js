@@ -3,6 +3,10 @@ import ColorCard from './ColorCard';
 import Delta from './Delta';
 
 function ColorApp({ colors }) {
+  if (colors.length === 0) {
+    return null;
+  }
+
   const lastColor = colors[colors.length - 1];
 
   const pairs = colors.map((c, i) => [c, colors[i + 1]]);

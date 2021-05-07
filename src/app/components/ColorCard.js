@@ -23,7 +23,7 @@ function ColorCard(props) {
 
   const prettyHcl = objectMap(hclColor, cents);
   const prettyRgb = objectMap(rgbColor, cents);
-  if (prettyHcl.c === 0) prettyHcl.h = 'any';
+  if (prettyHcl.c === "0") prettyHcl.h = 'any';
 
   const textClasses = classNames({
     'color-card__text': true,

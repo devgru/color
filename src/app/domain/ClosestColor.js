@@ -3,14 +3,10 @@ import namedColors from 'color-name-list';
 
 // nearestColor need objects {name => hex} as input
 const colors = namedColors.reduce(
-  (o, { name, hex }) => Object.assign(o, { [name]: hex }),
+  (hash, { name, hex }) => Object.assign(hash, { [name]: hex }),
   {},
 );
 
 const nearest = nearestColor.from(colors);
 
-function ClosestColor(c) {
-  return nearest(c);
-}
-
-export default ClosestColor;
+export default (color) => nearest(color);
