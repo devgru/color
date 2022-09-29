@@ -7,7 +7,7 @@
     "classnames": "^2.2.6",
     "color-descriptor": "^0.0.2",
     "color-name-list": "8",
-    "d3-color": "^1.2.3",
+    "d3-color": "^3.1.0",
     "deltae": "^0.0.4",
     "lodash.uniq": "^4.5.0",
     "nearest-color": "^0.4.4",
